@@ -25,16 +25,21 @@
                                     <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 </searchBar>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iw7-zm-NtV">
+                                    <rect key="frame" x="180" y="326" width="240" height="128"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="gEW-ym-d0Z" firstAttribute="leading" secondItem="pX1-JL-B4x" secondAttribute="leading" id="SpA-pn-SCf"/>
+                                <constraint firstAttribute="bottom" secondItem="iw7-zm-NtV" secondAttribute="bottom" constant="146" id="h7f-eN-V2W"/>
                                 <constraint firstAttribute="trailing" secondItem="gEW-ym-d0Z" secondAttribute="trailing" id="moA-0L-SPF"/>
+                                <constraint firstAttribute="centerX" secondItem="iw7-zm-NtV" secondAttribute="centerX" id="nbb-Lk-jG2"/>
                                 <constraint firstItem="gEW-ym-d0Z" firstAttribute="top" secondItem="pX1-JL-B4x" secondAttribute="top" constant="22" id="rDn-3k-Mla"/>
                             </constraints>
                         </view>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="songImage" id="h9e-Mn-PWU" customClass="col">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="songIdentifier" id="h9e-Mn-PWU" customClass="SongCollectionViewCell" customModule="Images" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -47,9 +52,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="songImageView" destination="u9P-mn-kFT" id="gxE-Ai-Ekq"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AvG-6b-KrN">
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="AvG-6b-KrN">
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
                         <connections>
@@ -58,6 +66,7 @@
                         </connections>
                     </collectionView>
                     <connections>
+                        <outlet property="albumImageView" destination="iw7-zm-NtV" id="liR-xH-bDI"/>
                         <outlet property="searchItem" destination="gEW-ym-d0Z" id="hdA-B1-XAl"/>
                     </connections>
                 </collectionViewController>

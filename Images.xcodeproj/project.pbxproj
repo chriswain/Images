@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E82D5FFE1B167D4F00F01ECD /* SongCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D5FFD1B167D4F00F01ECD /* SongCollectionViewCell.swift */; };
 		E8EADA441B165034006A627E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EADA431B165034006A627E /* AppDelegate.swift */; };
 		E8EADA491B165034006A627E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8EADA471B165034006A627E /* Main.storyboard */; };
 		E8EADA4B1B165034006A627E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8EADA4A1B165034006A627E /* Images.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E82D5FFD1B167D4F00F01ECD /* SongCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongCollectionViewCell.swift; path = ../SongCollectionViewCell.swift; sourceTree = "<group>"; };
 		E8EADA3E1B165034006A627E /* Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Images.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EADA421B165034006A627E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8EADA431B165034006A627E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		E8EADA401B165034006A627E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E82D5FFD1B167D4F00F01ECD /* SongCollectionViewCell.swift */,
 				E8EADA631B1651A4006A627E /* CollectionViewController.swift */,
 				E8EADA471B165034006A627E /* Main.storyboard */,
 				E8EADA411B165034006A627E /* Supporting Files */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E82D5FFE1B167D4F00F01ECD /* SongCollectionViewCell.swift in Sources */,
 				E8EADA641B1651A4006A627E /* CollectionViewController.swift in Sources */,
 				E8EADA441B165034006A627E /* AppDelegate.swift in Sources */,
 			);
@@ -409,6 +413,7 @@
 				E8EADA5F1B165034006A627E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8EADA601B165034006A627E /* Build configuration list for PBXNativeTarget "ImagesTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				E8EADA621B165034006A627E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

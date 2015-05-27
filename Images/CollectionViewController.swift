@@ -8,11 +8,15 @@
 
 import UIKit
 
-let reuseIdentifier = "songImage"
+let reuseIdentifier = "songIdentifier"
+
+var myGlobalImage: UIImage?
 
 class CollectionViewController: UICollectionViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
     @IBOutlet weak var searchItem: UISearchBar!
+    
+    @IBOutlet weak var albumImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,17 +44,53 @@ class CollectionViewController: UICollectionViewController, UISearchBarDelegate,
         
         let url = NSURL(string: endpoint)
         let request = NSURLRequest(URL: url!)
-        let connection = NSURLConnection(request: request, delegate: self, startImmediately: false)
         
-        connection?.start()
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (request, data, error) -> Void in
+            
+            //data is the information returned
+            
+            if let returnedInfo = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? [String:AnyObject] {
+                
+                println(returnedInfo)
+                
+                if let responseInfo = returnedInfo["results"] as? [[String:AnyObject]] {
+                    
+                    if let albumUrl = responseInfo[0]["artworkUrl100"] as? String {
+                        
+                        println(albumUrl)
+                        
+                        let albumNSUrl = NSURL(string: albumUrl)
+                        let imageData = NSData(contentsOfURL: albumNSUrl!)
+                        let albumImage = UIImage(data: imageData!)
+                        
+//                        self.albumImageView.image = albumImage
+                        myGlobalImage = albumImage
+                        
+                        self.albumImageView.image = albumImage
+                        
+                    }
+                  
+                }
+            
+            }
+            
+            
+        })
+      
+//        let connection = NSURLConnection(request: request, delegate: self, startImmediately: false)
+        
+ //       connection?.start()
+        
         
         
             
         }
     
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
         searchSong()
+        
     }
         
     
@@ -84,11 +124,13 @@ class CollectionViewController: UICollectionViewController, UISearchBarDelegate,
         return 0
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> SongCollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SongCollectionViewCell
     
         // Configure the cell
     //  cell.textLabel?.text = foundTweets[indexPath.row]["text"] as? String
+        
+        cell.songImageView.image = myGlobalImage!
     
         return cell
     }
