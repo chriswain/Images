@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EFA139FC-D40B-415F-B5AE-53432389FCD0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Images</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AE509D10F0E5F9328AFDD84DAEA5EEE989F3FAD3</key>
 		<string>https://github.com/chriswain/Images.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Images.xcodeproj/project.xcworkspace</string>
+	<string>Images.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AE509D10F0E5F9328AFDD84DAEA5EEE989F3FAD3</key>

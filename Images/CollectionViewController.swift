@@ -45,6 +45,7 @@ class CollectionViewController: UICollectionViewController, UISearchBarDelegate,
         let url = NSURL(string: endpoint)
         let request = NSURLRequest(URL: url!)
         
+        
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (request, data, error) -> Void in
             
             //data is the information returned
